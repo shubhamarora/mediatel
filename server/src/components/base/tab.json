@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_base_tabs",
+  "info": {
+    "displayName": "tab"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_main_video_lists",
+  "info": {
+    "displayName": "video list",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "youtubeLink": {
+      "displayName": "string",
+      "type": "component",
+      "repeatable": true,
+      "component": "base.string"
+    }
+  }
+}

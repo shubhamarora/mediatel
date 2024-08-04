@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_base_strings",
+  "info": {
+    "displayName": "text",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    }
+  }
+}

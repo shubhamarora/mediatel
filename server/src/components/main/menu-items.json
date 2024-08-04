@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_main_menu_items",
+  "info": {
+    "displayName": "menu items"
+  },
+  "options": {},
+  "attributes": {
+    "item": {
+      "type": "component",
+      "repeatable": true,
+      "component": "base.string"
+    }
+  }
+}

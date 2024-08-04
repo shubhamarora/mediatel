@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_image_image_carousels",
+  "info": {
+    "displayName": "image list",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}
