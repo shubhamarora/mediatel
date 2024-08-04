@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_main_logo_lists",
+  "info": {
+    "displayName": "logo list",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}
