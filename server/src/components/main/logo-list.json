@@ -16,6 +16,9 @@
         "videos",
         "audios"
       ]
+    },
+    "sectionId": {
+      "type": "string"
     }
   }
 }

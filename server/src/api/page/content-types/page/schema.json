@@ -4,7 +4,8 @@
   "info": {
     "singularName": "page",
     "pluralName": "pages",
-    "displayName": "page"
+    "displayName": "page",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,10 +16,11 @@
       "type": "dynamiczone",
       "components": [
         "main.video-list",
-        "main.services",
+        "main.multi-section",
         "main.logo-list",
         "main.image-carousel",
-        "base.image-text-section"
+        "main.menu-items",
+        "main.single-section"
       ]
     }
   }
