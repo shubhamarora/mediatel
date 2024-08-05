@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_base_image_tab_sections",
+  "info": {
+    "displayName": "image tab section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "description": {
+      "type": "text"
+    },
+    "tabs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "base.tab"
+    }
+  }
+}

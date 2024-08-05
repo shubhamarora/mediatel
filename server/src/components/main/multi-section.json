@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_main_services",
+  "info": {
+    "displayName": "multi section",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "sectionId": {
+      "type": "string"
+    },
+    "item": {
+      "type": "component",
+      "repeatable": true,
+      "component": "base.image-tab-section"
+    }
+  }
+}

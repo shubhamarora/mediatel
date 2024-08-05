@@ -8,6 +8,7 @@ export interface MainVideoList extends Schema.Component {
   };
   attributes: {
     youtubeLink: Attribute.Component<'base.string', true>;
+    sectionId: Attribute.String;
   };
 }
 
@@ -21,15 +22,29 @@ export interface MainTabs extends Schema.Component {
   };
 }
 
-export interface MainServices extends Schema.Component {
+export interface MainSingleSection extends Schema.Component {
+  collectionName: 'components_main_single_sections';
+  info: {
+    displayName: 'single section';
+  };
+  attributes: {
+    sectionId: Attribute.String;
+    title: Attribute.String;
+    description: Attribute.Text;
+    image: Attribute.Media<'images'>;
+  };
+}
+
+export interface MainMultiSection extends Schema.Component {
   collectionName: 'components_main_services';
   info: {
-    displayName: 'services';
+    displayName: 'multi section';
     description: '';
   };
   attributes: {
-    service: Attribute.Component<'base.image-text-section', true>;
     title: Attribute.String;
+    sectionId: Attribute.String;
+    item: Attribute.Component<'base.image-tab-section', true>;
   };
 }
 
@@ -37,9 +52,11 @@ export interface MainMenuItems extends Schema.Component {
   collectionName: 'components_main_menu_items';
   info: {
     displayName: 'menu items';
+    description: '';
   };
   attributes: {
     item: Attribute.Component<'base.string', true>;
+    logo: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
@@ -51,6 +68,7 @@ export interface MainLogoList extends Schema.Component {
   };
   attributes: {
     images: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    sectionId: Attribute.String;
   };
 }
 
@@ -62,6 +80,7 @@ export interface MainImageCarousel extends Schema.Component {
   };
   attributes: {
     images: Attribute.Media<'images', true>;
+    sectionId: Attribute.String;
   };
 }
 
@@ -79,23 +98,26 @@ export interface BaseTab extends Schema.Component {
 export interface BaseString extends Schema.Component {
   collectionName: 'components_base_strings';
   info: {
-    displayName: 'text';
+    displayName: 'menu item';
     description: '';
   };
   attributes: {
     text: Attribute.String;
+    sectionId: Attribute.String;
   };
 }
 
-export interface BaseImageTextSection extends Schema.Component {
-  collectionName: 'components_base_image_text_sections';
+export interface BaseImageTabSection extends Schema.Component {
+  collectionName: 'components_base_image_tab_sections';
   info: {
-    displayName: 'image text section';
+    displayName: 'image tab section';
+    description: '';
   };
   attributes: {
     title: Attribute.String;
-    description: Attribute.Text;
     image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    description: Attribute.Text;
+    tabs: Attribute.Component<'base.tab', true>;
   };
 }
 
@@ -104,13 +126,14 @@ declare module '@strapi/types' {
     export interface Components {
       'main.video-list': MainVideoList;
       'main.tabs': MainTabs;
-      'main.services': MainServices;
+      'main.single-section': MainSingleSection;
+      'main.multi-section': MainMultiSection;
       'main.menu-items': MainMenuItems;
       'main.logo-list': MainLogoList;
       'main.image-carousel': MainImageCarousel;
       'base.tab': BaseTab;
       'base.string': BaseString;
-      'base.image-text-section': BaseImageTextSection;
+      'base.image-tab-section': BaseImageTabSection;
     }
   }
 }

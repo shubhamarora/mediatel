@@ -1,10 +1,13 @@
 {
-  "collectionName": "components_base_image_text_sections",
+  "collectionName": "components_main_single_sections",
   "info": {
-    "displayName": "image text section"
+    "displayName": "single section"
   },
   "options": {},
   "attributes": {
+    "sectionId": {
+      "type": "string"
+    },
     "title": {
       "type": "string"
     },
@@ -13,10 +16,7 @@
     },
     "image": {
       "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
+        "images"
       ],
       "type": "media",
       "multiple": false

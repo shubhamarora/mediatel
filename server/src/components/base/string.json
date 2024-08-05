@@ -1,12 +1,15 @@
 {
   "collectionName": "components_base_strings",
   "info": {
-    "displayName": "text",
+    "displayName": "menu item",
     "description": ""
   },
   "options": {},
   "attributes": {
     "text": {
+      "type": "string"
+    },
+    "sectionId": {
       "type": "string"
     }
   }

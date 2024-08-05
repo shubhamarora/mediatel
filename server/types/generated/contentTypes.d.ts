@@ -368,6 +368,7 @@ export interface ApiPagePage extends Schema.SingleType {
     singularName: 'page';
     pluralName: 'pages';
     displayName: 'page';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -376,10 +377,11 @@ export interface ApiPagePage extends Schema.SingleType {
     sections: Attribute.DynamicZone<
       [
         'main.video-list',
-        'main.services',
+        'main.multi-section',
         'main.logo-list',
         'main.image-carousel',
-        'base.image-text-section'
+        'main.menu-items',
+        'main.single-section'
       ]
     >;
     createdAt: Attribute.DateTime;
