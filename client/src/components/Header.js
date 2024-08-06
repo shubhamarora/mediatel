@@ -4,7 +4,6 @@ import { getURL } from "../api";
 
 // Add this Header component above your App component or in a separate file and import it into App.js
 function Header({ data }) {
-  console.log(data);
   return (
     <header id='home' style={{
       display: 'flex',

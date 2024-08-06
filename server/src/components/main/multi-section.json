@@ -12,7 +12,7 @@
     "sectionId": {
       "type": "string"
     },
-    "item": {
+    "items": {
       "type": "component",
       "repeatable": true,
       "component": "base.image-tab-section"

@@ -1,5 +1,42 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface BaseTab extends Schema.Component {
+  collectionName: 'components_base_tabs';
+  info: {
+    displayName: 'tab';
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.Text;
+  };
+}
+
+export interface BaseString extends Schema.Component {
+  collectionName: 'components_base_strings';
+  info: {
+    displayName: 'menu item';
+    description: '';
+  };
+  attributes: {
+    text: Attribute.String;
+    sectionId: Attribute.String;
+  };
+}
+
+export interface BaseImageTabSection extends Schema.Component {
+  collectionName: 'components_base_image_tab_sections';
+  info: {
+    displayName: 'image tab section';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    description: Attribute.Text;
+    tabs: Attribute.Component<'base.tab', true>;
+  };
+}
+
 export interface MainVideoList extends Schema.Component {
   collectionName: 'components_main_video_lists';
   info: {
@@ -44,7 +81,7 @@ export interface MainMultiSection extends Schema.Component {
   attributes: {
     title: Attribute.String;
     sectionId: Attribute.String;
-    item: Attribute.Component<'base.image-tab-section', true>;
+    items: Attribute.Component<'base.image-tab-section', true>;
   };
 }
 
@@ -84,46 +121,12 @@ export interface MainImageCarousel extends Schema.Component {
   };
 }
 
-export interface BaseTab extends Schema.Component {
-  collectionName: 'components_base_tabs';
-  info: {
-    displayName: 'tab';
-  };
-  attributes: {
-    title: Attribute.String;
-    description: Attribute.Text;
-  };
-}
-
-export interface BaseString extends Schema.Component {
-  collectionName: 'components_base_strings';
-  info: {
-    displayName: 'menu item';
-    description: '';
-  };
-  attributes: {
-    text: Attribute.String;
-    sectionId: Attribute.String;
-  };
-}
-
-export interface BaseImageTabSection extends Schema.Component {
-  collectionName: 'components_base_image_tab_sections';
-  info: {
-    displayName: 'image tab section';
-    description: '';
-  };
-  attributes: {
-    title: Attribute.String;
-    image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    description: Attribute.Text;
-    tabs: Attribute.Component<'base.tab', true>;
-  };
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'base.tab': BaseTab;
+      'base.string': BaseString;
+      'base.image-tab-section': BaseImageTabSection;
       'main.video-list': MainVideoList;
       'main.tabs': MainTabs;
       'main.single-section': MainSingleSection;
@@ -131,9 +134,6 @@ declare module '@strapi/types' {
       'main.menu-items': MainMenuItems;
       'main.logo-list': MainLogoList;
       'main.image-carousel': MainImageCarousel;
-      'base.tab': BaseTab;
-      'base.string': BaseString;
-      'base.image-tab-section': BaseImageTabSection;
     }
   }
 }
