@@ -25,7 +25,6 @@ function App() {
     // Add your custom JavaScript here
     getPageContent().then((data) => {
       setSections(data.data.attributes.sections);
-      console.log(data.data.attributes.sections);
     });
   }, []);
 

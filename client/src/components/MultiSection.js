@@ -2,6 +2,7 @@ import React from "react";
 import { useInView } from "react-intersection-observer";
 import { formatString } from "../utils";
 import { Col, Container, Row, Tab, Tabs } from "react-bootstrap";
+import { getURL } from "../api";
 
 
 function ImageWithTabs({ image, title, tabs, dark, reverse }) {
@@ -13,7 +14,7 @@ function ImageWithTabs({ image, title, tabs, dark, reverse }) {
     <Tabs defaultActiveKey={formatString(tabs[0].title)} className='mb-3' variant="pills" style={{ paddingTop: '25px', justifyContent: reverse ? 'flex-start' : 'flex-end' }}>
       {tabs.map((tab, index) => (
         <Tab key={index} eventKey={formatString(tab.title)} title={tab.title}>
-          <p style={{ paddingTop: '20px', textAlign: 'left', paddingLeft: reverse ? '0px' : '20px' }}>{tab.content}</p>
+          <p style={{ paddingTop: '20px', textAlign: 'left', paddingLeft: reverse ? '0px' : '20px' }}>{tab.description}</p>
         </Tab>
       ))}
     </Tabs>
@@ -70,11 +71,36 @@ function ImageWithText({ image, title, text, dark, reverse }) {
   )
 }
 
-function MultiSection() {
+function MultiSection({ data }) {
   return (
-    <section id='services'>
+    <section id={data.sectionId}>
       <Container style={{ padding: '80px 0' }}>
-        <h2 className='section-title'>Services</h2>
+        <h2 className='section-title'>{data.title}</h2>
+        {data.items.map((item, index) => {
+          if (item.tabs && Array.isArray(item.tabs) && item.tabs.length > 0) {
+            return (
+              <ImageWithTabs
+                key={index}
+                image={`${getURL()}${item.image.data.attributes.url}`}
+                title={item.title}
+                tabs={item.tabs}
+                dark={index % 2}
+                reverse={index % 2}
+              />
+            )
+          } else {
+            return (
+              <ImageWithText
+                key={index}
+                image={`${getURL()}${item.image.data.attributes.url}`}
+                title={item.description}
+                text={item.text}
+                dark={index % 2}
+                reverse={index % 2}
+              />
+            )
+          }
+        })}
         <ImageWithTabs
           image='https://bootstrapmade.com/demo/templates/Techie/assets/img/services.jpg'
           title='Software Integration'
