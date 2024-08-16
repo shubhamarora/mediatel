@@ -28,7 +28,7 @@
     "sectionId": {
       "type": "string"
     },
-    "description": {
+    "descriptio": {
       "type": "blocks"
     }
   }
