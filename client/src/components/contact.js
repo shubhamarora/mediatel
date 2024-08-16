@@ -12,21 +12,21 @@ export const Contact = () => {
               <div className="info-item">
                 <i className="bi bi-geo-alt"></i>
                 <div>
-                  <h5>Location:</h5>
+                  <h6 style={{ fontWeight: 800 }}>Location:</h6>
                   <p>A108 Adam Street, New York, NY 535022</p>
                 </div>
               </div>
               <div className="info-item">
                 <i className="bi bi-envelope"></i>
                 <div>
-                  <h4>Email:</h4>
+                  <h6 style={{ fontWeight: 800 }}>Email:</h6>
                   <p>abc@gmail.com</p>
                 </div>
               </div>
               <div className="info-item">
                 <i className="bi bi-phone"></i>
                 <div>
-                  <h4>Call:</h4>
+                  <h6 style={{ fontWeight: 800 }}>Call:</h6>
                   <p>+1 5589 55488 55s</p>
                 </div>
               </div>
