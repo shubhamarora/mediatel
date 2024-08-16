@@ -1,7 +1,8 @@
 {
   "collectionName": "components_base_tabs",
   "info": {
-    "displayName": "tab"
+    "displayName": "tab",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -9,7 +10,7 @@
       "type": "string"
     },
     "description": {
-      "type": "text"
+      "type": "blocks"
     }
   }
 }

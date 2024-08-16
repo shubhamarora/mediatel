@@ -4,6 +4,7 @@ import { getURL } from "../api";
 
 // Add this Header component above your App component or in a separate file and import it into App.js
 function Header({ data }) {
+  console.log(data);
   return (
     <header id='home' style={{
       display: 'flex',
@@ -19,16 +20,29 @@ function Header({ data }) {
     }}>
       <div>
         {/* Logo */}
-        <img src={`${getURL()}${data.logo.data.attributes.url}`} alt="Logo" style={{ height: '50px' }} />
+        <img src={`${getURL()}${data?.logo?.data?.attributes?.url}`} alt="Logo" style={{ height: '50px' }} />
       </div>
       <nav>
         {/* Menu Items */}
         <ul style={{ listStyle: 'none', display: 'flex', gap: '20px', margin: 0, padding: 0 }}>
           {data.item.map((item, index) => (
-            <li key={index}>
-              <a href={`#${item.sectionId}`} style={{ textDecoration: 'none', color: 'black' }}>{item.text}</a>
+            <li key={index} style={{ position: 'relative' }}>
+              <a href={`#${item.sectionId}`} style={{ textDecoration: 'none', color: 'black' }}>{item.title}</a>
+              {/* Check for dropdown and render if exists */}
+              {item.dropdown && Array.isArray(item.dropdown) && item.dropdown.length > 0 && (
+                <ul className="nav-dropdown">
+                  {item.dropdown.map((dropdownItem, i) => (
+                    <li key={i} style={{ padding: '10px 20px' }}>
+                      <a href={`#${dropdownItem.sectionId}`} style={{ textDecoration: 'none', color: 'black' }}>{dropdownItem.subtitle}</a>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </li>
           ))}
+          <li>
+            <a href="#contact" style={{ textDecoration: 'none', color: 'black' }}>Contact</a>
+          </li>
         </ul>
       </nav>
     </header>

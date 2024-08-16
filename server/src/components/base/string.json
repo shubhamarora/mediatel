@@ -6,11 +6,16 @@
   },
   "options": {},
   "attributes": {
-    "text": {
+    "title": {
       "type": "string"
     },
     "sectionId": {
       "type": "string"
+    },
+    "dropdown": {
+      "type": "component",
+      "repeatable": true,
+      "component": "base.dropdown"
     }
   }
 }

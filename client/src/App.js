@@ -1,12 +1,12 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect, useState } from 'react';
-import { Carousel } from 'react-bootstrap';
 
 // Vendor CSS Files
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import 'animate.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 // Template Main CSS File
 import './App.css';
@@ -17,6 +17,7 @@ import YouTubeVideoList from './components/YoutubeVideoList';
 import Header from './components/Header';
 import LogosList from './components/LogosList';
 import ImageCarousel from './components/ImageCarousel';
+import { Contact } from './components/contact';
 
 function App() {
   const [sections, setSections] = useState([]);
@@ -48,7 +49,8 @@ function App() {
             return null;
         }
       })}
-    </div>
+      <Contact />
+    </div >
   );
 }
 

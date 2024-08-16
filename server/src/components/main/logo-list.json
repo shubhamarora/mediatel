@@ -19,6 +19,9 @@
     },
     "sectionId": {
       "type": "string"
+    },
+    "title": {
+      "type": "string"
     }
   }
 }
