@@ -50,6 +50,9 @@ function App() {
         }
       })}
       <Contact />
+      <footer style={{ backgroundColor: '#f5f6f8', padding: '20px 0', textAlign: 'center' }}>
+        <p>&copy; {new Date().getFullYear()} Mediatel Communication Pvt. Ltd. All rights reserved.</p>
+      </footer>
     </div >
   );
 }

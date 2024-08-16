@@ -117,11 +117,17 @@ li:hover > .nav-dropdown {
   display: flex;
   align-items: center; /* Aligns items vertically in the center */
   gap: 10px; /* Optional: adds some space between the icon and the text */
+  margin-bottom: 20px;
 }
 
 .info-item > i {
-  font-size: 24px;
+  font-size: 22px;
   background-color: aliceblue;
-  border-radius: 100%;
-  padding: 12px;
+  border-radius: 50px;
+  margin: 12px;
+  width: 44px;
+  height: 44px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
