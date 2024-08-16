@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_base_dropdowns",
+  "info": {
+    "displayName": "dropdown"
+  },
+  "options": {},
+  "attributes": {
+    "subtitle": {
+      "type": "string"
+    },
+    "sectionId": {
+      "type": "string"
+    }
+  }
+}

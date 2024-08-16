@@ -24,15 +24,7 @@ function SamplePrevArrow(props) {
   );
 }
 
-function YouTubeVideoList() {
-  const videos = [
-    'dQw4w9WgXcQ',
-    '3JZ_D3ELwOQ',
-    'M7lc1UVf-VE',
-    'kffacxfA7G4',
-    // Add more video IDs as needed
-  ];
-
+function YouTubeVideoList({ data }) {
   const settings = {
     dots: true,
     infinite: true,
@@ -44,14 +36,14 @@ function YouTubeVideoList() {
   };
 
   return (
-    <div style={{ margin: '80px 40px' }}>
+    <div id={data.sectionId} style={{ margin: '80px 40px' }}>
       <Slider {...settings}>
-        {videos.map((videoId, index) => (
+        {data?.videoIds.map((videoId, index) => (
           <div key={index} style={{ margin: '20px 0' }}>
             <iframe
               width="90%"
               height="315"
-              src={`https://www.youtube.com/embed/${videoId}`}
+              src={`https://www.youtube.com/embed/${videoId?.text}`}
               title="YouTube video player"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

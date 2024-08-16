@@ -20,13 +20,16 @@
         "audios"
       ]
     },
-    "description": {
-      "type": "text"
-    },
     "tabs": {
       "type": "component",
       "repeatable": true,
       "component": "base.tab"
+    },
+    "sectionId": {
+      "type": "string"
+    },
+    "description": {
+      "type": "blocks"
     }
   }
 }

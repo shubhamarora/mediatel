@@ -6,14 +6,13 @@
   },
   "options": {},
   "attributes": {
-    "youtubeLink": {
-      "displayName": "string",
-      "type": "component",
-      "repeatable": true,
-      "component": "base.string"
-    },
     "sectionId": {
       "type": "string"
+    },
+    "videoIds": {
+      "type": "component",
+      "repeatable": true,
+      "component": "base.text"
     }
   }
 }
