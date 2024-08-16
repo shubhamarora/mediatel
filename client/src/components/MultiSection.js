@@ -16,7 +16,7 @@ function ImageWithTabs({ image, title, tabs, dark, reverse, sectionId }) {
       {tabs.map((tab, index) => (
         <Tab key={index} eventKey={formatString(tab.title)} title={tab.title}>
           <div style={{ paddingTop: '20px', textAlign: 'left', paddingLeft: reverse ? '0px' : '20px' }}>
-            <RichTextRenderer blocks={tab.description} />
+            <RichTextRenderer blocks={tab.descriptio} />
           </div>
         </Tab>
       ))}
@@ -103,7 +103,7 @@ function MultiSection({ data }) {
                 sectionId={item.sectionId}
                 image={`${getURL()}${item?.image?.data?.attributes?.url}`}
                 title={item.title}
-                description={item.description}
+                description={item.descriptio}
                 dark={index % 2}
                 reverse={index % 2}
               />

@@ -20,7 +20,7 @@ function SingleSection({ data }) {
         <h2 className='section-title'>{data?.title}</h2>
         <Row>
           <Col md={6} className={inView ? 'animate__animated animate__slideInLeft' : ''} style={{ textAlign: 'left', padding: '50px' }}>
-            <RichTextRenderer blocks={data?.description} />
+            <RichTextRenderer blocks={data?.descriptio} />
           </Col>
           <Col md={6} className={inView ? 'animate__animated animate__slideInRight' : ''}>
             <img
