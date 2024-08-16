@@ -25,7 +25,8 @@ function SingleSection({ data }) {
           <Col md={6} className={inView ? 'animate__animated animate__slideInRight' : ''}>
             <img
               src={`${getURL()}${data?.image?.data?.attributes?.url}`}
-              alt={data?.image?.data?.attributes?.alternativeText} style={{ width: '100%', height: 'auto' }} />
+              alt={data?.image?.data?.attributes?.alternativeText}
+              className="section-image" />
           </Col>
         </Row>
       </Container>
