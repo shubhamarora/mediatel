@@ -18,7 +18,6 @@ rm -rf .tmp
 rm -rf .strapi 
 mtel 'pm2 stop strapi-app'
 mtel 'find /var/www/dashboard/ -mindepth 1 -maxdepth 1 ! -name 'public' ! -name '.env' -exec rm -rf {} +'
-
 rsync -avz -e "ssh -i ~/.ssh/personal" --exclude 'public' --exclude '.env' . root@64.227.130.233:/var/www/dashboard/
 mtel 'cd /var/www/dashboard/ && npm i'
 mtel 'pm2 restart strapi-app'
