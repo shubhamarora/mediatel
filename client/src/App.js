@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect, useState } from 'react';
+import { Spinner } from 'react-bootstrap'
 
 // Vendor CSS Files
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -21,13 +22,20 @@ import { Contact } from './components/contact';
 
 function App() {
   const [sections, setSections] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // Add your custom JavaScript here
     getPageContent().then((data) => {
       setSections(data.data.attributes.sections);
-    });
+    }).finally(() => { setLoading(false) });
   }, []);
+
+  if (loading) {
+    return <div className="App" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+      <Spinner animation="grow" />;
+    </div>
+  }
 
   return (
     <div className="App" style={{ display: 'flex', flexDirection: 'column' }}>
@@ -51,7 +59,7 @@ function App() {
       })}
       <Contact />
       <footer style={{ backgroundColor: '#f5f6f8', padding: '20px 0', textAlign: 'center' }}>
-        <p>&copy; {new Date().getFullYear()} Mediatel Communication Pvt. Ltd. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Mediatel Communications Pvt. Ltd. All rights reserved.</p>
       </footer>
     </div >
   );

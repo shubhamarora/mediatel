@@ -13,21 +13,28 @@ export const Contact = () => {
                 <i className="bi bi-geo-alt"></i>
                 <div>
                   <h6 style={{ fontWeight: 800 }}>Location:</h6>
-                  <p>A108 Adam Street, New York, NY 535022</p>
+                  <p>NRI Greens, Vrindavan, U.P 281121, India</p>
                 </div>
               </div>
               <div className="info-item">
                 <i className="bi bi-envelope"></i>
                 <div>
                   <h6 style={{ fontWeight: 800 }}>Email:</h6>
-                  <p>abc@gmail.com</p>
+                  <p>sales@mediatelcommunication.com</p>
                 </div>
               </div>
               <div className="info-item">
-                <i className="bi bi-phone"></i>
+                <i className="bi bi-linkedin"></i>
                 <div>
-                  <h6 style={{ fontWeight: 800 }}>Call:</h6>
-                  <p>+1 5589 55488 55s</p>
+                  <h6 style={{ fontWeight: 800 }}>LinkedIn:</h6>
+                  <a href="https://linkedin.com/company/contentification" style={{ color: "black" }} target="_blank" rel="noreferrer" >@Contentification</a>
+                </div>
+              </div>
+              <div className="info-item">
+                <i className="bi bi-youtube"></i>
+                <div>
+                  <h6 style={{ fontWeight: 800 }}>YouTube:</h6>
+                  <a href="https://www.youtube.com/@contentification" style={{ color: "black" }} target="_blank" rel="noreferrer">YT@Contentification</a>
                 </div>
               </div>
             </div>
@@ -37,7 +44,7 @@ export const Contact = () => {
               <h5 style={{ textTransform: 'uppercase', paddingBottom: '10px' }}>Locate us</h5>
               <iframe
                 title="locate us map"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.686123496625!2d-73.9878536845975!3d40.74844097932847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2598c3e2bfe9b%3A0x1b3e1f9f6f3e1f8e!2sEmpire%20State%20Building!5e0!3m2!1sen!2sin!4v1627995261600!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14146.217802754454!2d77.6711404!3d27.576335!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39736e173716d0e3%3A0x9b49094602cf89c6!2sSHRI%20RADHA%20NRI%20GREENS!5e0!3m2!1sen!2sin!4v1724207370813!5m2!1sen!2sin"
                 width="100%"
                 height="250"
                 style={{ border: 0 }}
