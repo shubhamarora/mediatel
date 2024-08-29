@@ -32,7 +32,7 @@ export interface MainSingleSection extends Schema.Component {
     sectionId: Attribute.String;
     title: Attribute.String;
     image: Attribute.Media<'images'>;
-    description: Attribute.Blocks;
+    descriptio: Attribute.Blocks;
   };
 }
 
@@ -104,7 +104,7 @@ export interface BaseTab extends Schema.Component {
   };
   attributes: {
     title: Attribute.String;
-    description: Attribute.Blocks;
+    descriptio: Attribute.Blocks;
   };
 }
 
@@ -132,7 +132,7 @@ export interface BaseImageTabSection extends Schema.Component {
     image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     tabs: Attribute.Component<'base.tab', true>;
     sectionId: Attribute.String;
-    description: Attribute.Blocks;
+    descriptio: Attribute.Blocks;
   };
 }
 

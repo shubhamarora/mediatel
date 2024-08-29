@@ -1,6 +1,22 @@
 import React from 'react';
 
 const RichTextRenderer = ({ blocks }) => {
+  const extractColorAndText = (input) => {
+    const regex = /^(\w+)>>>([\s\S]*)$/; // Regular expression to match word before >>> and capture the rest
+    const match = input.match(regex); // Apply the regex to the input string
+    if (match) {
+      return {
+        color: match[1],    // The first capturing group is the color
+        text: match[2].trim() // The second capturing group is the remaining string, trimmed of any extra spaces
+      };
+    }
+
+    return {
+      color: '',             // If no match is found, return empty values
+      text: input.trim()     // If no color is found, return the entire string as text
+    };
+  };
+
   const renderChildren = (children) => {
     return children.map((child, index) => {
       let content = child.text;
@@ -40,7 +56,15 @@ const RichTextRenderer = ({ blocks }) => {
         return <HeadingTag key={index}>{renderChildren(block.children)}</HeadingTag>;
 
       case 'paragraph':
-        return <p key={index}>{renderChildren(block.children)}</p>;
+        const paraDetails = extractColorAndText(block.children[0].text);
+        const pStyle = paraDetails.color ? { color: paraDetails.color } : {};
+        const childrenClone = JSON.parse(JSON.stringify(block.children)); // Deep clone the children array
+        childrenClone[0].text = paraDetails.text; // Replace the text with the extracted text
+        return (
+          <p key={index} style={{ ...pStyle }}>
+            {renderChildren(childrenClone)}
+          </p>
+        );
 
       case 'list':
         return block.format === 'unordered' ? (
@@ -48,6 +72,9 @@ const RichTextRenderer = ({ blocks }) => {
         ) : (
           <ol key={index}>{renderListItems(block.children)}</ol>
         );
+      case 'image':
+        const { image } = block;
+        return <img key={index} src={image.url} alt={block.name} style={{ width: '100%' }} />;
 
       // Add more cases for other block types if needed
       default:
