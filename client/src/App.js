@@ -33,7 +33,7 @@ function App() {
 
   if (loading) {
     return <div className="App" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-      <Spinner animation="grow" />;
+      <Spinner animation="grow" />
     </div>
   }
 
