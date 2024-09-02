@@ -23,10 +23,12 @@ function ImageWithTabs({ image, title, tabs, dark, reverse, sectionId }) {
     </Tabs>
   );
   const imageContent = (
-    <>
-      <h3 className='subsection-title'>{title}</h3>
-      <img src={image} alt="Services" className="section-image" />
-    </>
+    <div className="flex-center">
+      <div>
+        <h3 className='subsection-title'>{title}</h3>
+        <img src={image} alt="Services" className="section-image" />
+      </div>
+    </div>
   );
   return (
     <Row
@@ -59,7 +61,9 @@ function ImageWithText({ image, title, description, dark, reverse, sectionId }) 
     </>
   );
   const imageContent = (
-    <img src={image} alt="Services" className="section-image" />
+    <div className="flex-center">
+      <img src={image} alt="Services" className="section-image" />
+    </div>
   );
   return (
     <Row
