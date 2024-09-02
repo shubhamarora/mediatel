@@ -7,7 +7,7 @@ export const Contact = () => {
       <Container style={{ padding: '80px 0' }}>
         <h2 className='section-title'>Contact</h2>
         <Row style={{ padding: '80px 0' }}>
-          <Col md={5} style={{ textAlign: 'left' }}>
+          <Col md={12} style={{ textAlign: 'left' }}>
             <div className='info-wrap'>
               <div className="info-item">
                 <i className="bi bi-geo-alt"></i>
@@ -39,7 +39,7 @@ export const Contact = () => {
               </div>
             </div>
           </Col>
-          <Col md={7}>
+          {/* <Col md={7}>
             <div className='info-wrap'>
               <h5 style={{ textTransform: 'uppercase', paddingBottom: '10px' }}>Locate us</h5>
               <iframe
@@ -52,7 +52,7 @@ export const Contact = () => {
                 loading="lazy"
               ></iframe>
             </div>
-          </Col>
+          </Col> */}
         </Row>
       </Container>
     </section>
