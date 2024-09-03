@@ -31,8 +31,8 @@ function YouTubeVideoList({ data }) {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 3,
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />
+    nextArrow: data.videoIds.length > 3 ? <SampleNextArrow /> : null,
+    prevArrow: data.videoIds.length > 3 ? <SamplePrevArrow /> : null
   };
 
   return (

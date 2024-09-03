@@ -138,3 +138,27 @@ li:hover > .nav-dropdown {
   justify-content: center;
   height: 100%;
 }
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.img-scroll-container {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.img-scroll-content {
+  display: flex;
+  animation: scroll 40s linear infinite;
+}
+
+.img-scroll-content img {
+  margin-right: 20px;
+}
